@@ -31,7 +31,7 @@ namespace MicroserviceArchitecture.Services.Customer.Infra.Redis.Repositories
         private async Task SetClients(Client client)
         {
             RedisValue? clientValues = await redisDatabase.StringGetAsync("Clients");
-            List<Client> clients = new List<Client>();
+            List<Client>? clients = new List<Client>();
             if (clientValues != null && clientValues.HasValue && !clientValues.Value.IsNullOrEmpty)
             {
                 clients = JsonSerializer.Deserialize<List<Client>>(clientValues);
@@ -43,7 +43,7 @@ namespace MicroserviceArchitecture.Services.Customer.Infra.Redis.Repositories
         private async Task RemoveClients(Client client)
         {
             RedisValue? clientValues = await redisDatabase.StringGetAsync("Clients");
-            List<Client> clients = new List<Client>();
+            List<Client>? clients = new List<Client>();
             if (clientValues != null && clientValues.HasValue && !clientValues.Value.IsNullOrEmpty)
             {
                 clients = JsonSerializer.Deserialize<List<Client>>(clientValues);

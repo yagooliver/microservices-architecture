@@ -42,14 +42,14 @@ services:
             context: .
             dockerfile: ./customer.Dockerfile
         environment: 
-            - ASPNETCORE_URLS=http://0.0.0.0:5285;https://*:7277
+            - ASPNETCORE_URLS=http://0.0.0.0:30002;https://*:3002
             - ASPNETCORE_ENVIRONMENT=Production
             - DB_CONNECTION_STRING=Server=services-db;Database=customer-db;User=sa;Password=dev@1234;TrustServerCertificate=true
             - ASPNETCORE_Kestrel__Certificates__Default__Password=dev123 
             - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
         ports: 
-            - "5285:5285"
-            - "7277:7277"
+            - "30002:30002"
+            - "3002:3002"
         networks:
             - services-network
         depends_on: 
@@ -58,7 +58,23 @@ services:
             - cache-service
         volumes:
             - $USERPROFILE\.aspnet\https:/https/
-        
+    api-gateway:
+        container_name: "api-gateway"
+        build:
+            context: .
+            dockerfile: ./api-gateway.Dockerfile
+        environment: 
+            - ASPNETCORE_URLS=http://0.0.0.0:30001;https://*:3001
+            - ASPNETCORE_ENVIRONMENT=Production
+            - ASPNETCORE_Kestrel__Certificates__Default__Password=dev123 
+            - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+        ports: 
+            - "30001:30001"
+            - "3001:3001"
+        networks:
+            - services-network
+        volumes:
+            - $USERPROFILE\.aspnet\https:/https/
 volumes:
     sqlsystem:
     sqldata:

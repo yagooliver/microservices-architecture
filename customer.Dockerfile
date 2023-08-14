@@ -16,7 +16,7 @@ RUN dotnet publish -c Release -o /publish
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 as runtime
 WORKDIR /publish
 COPY --from=build-env /publish .
-ENV ASPNETCORE_URLS=http://+:5285;https://+:7277
-EXPOSE 5285/tcp
-EXPOSE 7277/tcp
-ENTRYPOINT ["dotnet", "MicroserviceArchitecture.Services.Customer.Service.dll","--server.urls", "http://*:5285;https://*:7277"]
+ENV ASPNETCORE_URLS=http://+:30002;https://+:3002
+EXPOSE 30002/tcp
+EXPOSE 3002/tcp
+ENTRYPOINT ["dotnet", "MicroserviceArchitecture.Services.Customer.Service.dll","--server.urls", "http://*:30002;https://*:3002"]

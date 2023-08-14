@@ -9,10 +9,7 @@ namespace MicroserviceArchitecture.Services.Customer.Infra.SqlServer.ContextDb
     {
         private readonly IConfiguration configuration;
         public virtual DbSet<Client> Clients { get; set; }
-        public CustomerDbContext()
-        {
-
-        }
+        
         public CustomerDbContext(DbContextOptions<CustomerDbContext> options, IConfiguration configuration) : base(options)
         {
             this.configuration = configuration;

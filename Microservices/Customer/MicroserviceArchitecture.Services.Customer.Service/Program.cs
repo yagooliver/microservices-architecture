@@ -18,13 +18,11 @@ builder.Configuration
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
     serverOptions.Limits.MaxConcurrentConnections = 100;
-    serverOptions.ConfigureEndpointDefaults(lo => lo.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2);
+    serverOptions.ConfigureEndpointDefaults(lo => lo.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2);
 });
 
 builder.Services.AddControllers();
 
-Console.WriteLine(builder.Environment.EnvironmentName);
-Console.WriteLine(builder.Configuration.GetConnectionString("ServiceDb"));
 builder.Services.AddDbContext<CustomerDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ServiceDb")));
 
 builder.Services.RedisConfiguration(builder.Configuration);
@@ -50,7 +48,7 @@ app.UseCors();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

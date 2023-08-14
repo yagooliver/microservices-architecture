@@ -9,29 +9,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{8040046A-F8E3-4766-8C7A-8EFA4DC7B29E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Model", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Model\MicroserviceArchitecture.Services.Customer.Model.csproj", "{71FBD425-7EA0-4547-834B-5DF31B05BA3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Model", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Model\MicroserviceArchitecture.Services.Customer.Model.csproj", "{71FBD425-7EA0-4547-834B-5DF31B05BA3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Application", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Application\MicroserviceArchitecture.Services.Customer.Application.csproj", "{73FC9BA3-69A7-4EE1-90FD-623300996BC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Application", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Application\MicroserviceArchitecture.Services.Customer.Application.csproj", "{73FC9BA3-69A7-4EE1-90FD-623300996BC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Infra.Redis", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Infra.Redis\MicroserviceArchitecture.Services.Customer.Infra.Redis.csproj", "{F4045CB3-296A-424C-8025-7404A76BFE3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Infra.Redis", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Infra.Redis\MicroserviceArchitecture.Services.Customer.Infra.Redis.csproj", "{F4045CB3-296A-424C-8025-7404A76BFE3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Infra.SqlServer", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Infra.SqlServer\MicroserviceArchitecture.Services.Customer.Infra.SqlServer.csproj", "{1EA47719-EFF9-48E6-8C94-78B83D6E0599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Infra.SqlServer", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Infra.SqlServer\MicroserviceArchitecture.Services.Customer.Infra.SqlServer.csproj", "{1EA47719-EFF9-48E6-8C94-78B83D6E0599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Contracts", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Contracts\MicroserviceArchitecture.Services.Customer.Contracts.csproj", "{B1C491B0-13AB-4F7A-80D4-DC40B7152128}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Contracts", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Contracts\MicroserviceArchitecture.Services.Customer.Contracts.csproj", "{B1C491B0-13AB-4F7A-80D4-DC40B7152128}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Common.Models", "Common\MicroserviceArchitecture.Common.Models\MicroserviceArchitecture.Common.Models.csproj", "{42A4D301-869A-4F05-ADE2-3B67F10FB2AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Common.Models", "Common\MicroserviceArchitecture.Common.Models\MicroserviceArchitecture.Common.Models.csproj", "{42A4D301-869A-4F05-ADE2-3B67F10FB2AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Tests", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Tests\MicroserviceArchitecture.Services.Customer.Tests.csproj", "{EED8D41D-429B-4339-B052-60D324B31911}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Tests", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Tests\MicroserviceArchitecture.Services.Customer.Tests.csproj", "{EED8D41D-429B-4339-B052-60D324B31911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroserviceArchitecture.Services.Customer.Service", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Service\MicroserviceArchitecture.Services.Customer.Service.csproj", "{54667E7E-28B5-4EAE-BE2B-D7D118A94AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Services.Customer.Service", "Microservices\Customer\MicroserviceArchitecture.Services.Customer.Service\MicroserviceArchitecture.Services.Customer.Service.csproj", "{54667E7E-28B5-4EAE-BE2B-D7D118A94AD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroserviceArchitecture.Api.Gateway", "Gateway\MicroserviceArchitecture.Api.Gateway\MicroserviceArchitecture.Api.Gateway.csproj", "{58B7EAB3-C361-4348-8D7A-A15F1C15B863}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{55723349-C6D1-4C13-92A2-1BA9BE22535B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{71FBD425-7EA0-4547-834B-5DF31B05BA3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -66,6 +67,13 @@ Global
 		{54667E7E-28B5-4EAE-BE2B-D7D118A94AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54667E7E-28B5-4EAE-BE2B-D7D118A94AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54667E7E-28B5-4EAE-BE2B-D7D118A94AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B7EAB3-C361-4348-8D7A-A15F1C15B863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B7EAB3-C361-4348-8D7A-A15F1C15B863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B7EAB3-C361-4348-8D7A-A15F1C15B863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B7EAB3-C361-4348-8D7A-A15F1C15B863}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8040046A-F8E3-4766-8C7A-8EFA4DC7B29E} = {1FB5A7AC-72F0-4404-86B6-DC30AD247B54}
@@ -77,5 +85,9 @@ Global
 		{42A4D301-869A-4F05-ADE2-3B67F10FB2AD} = {77F027C5-1342-431E-BE73-43B8E8D992A4}
 		{EED8D41D-429B-4339-B052-60D324B31911} = {8040046A-F8E3-4766-8C7A-8EFA4DC7B29E}
 		{54667E7E-28B5-4EAE-BE2B-D7D118A94AD4} = {8040046A-F8E3-4766-8C7A-8EFA4DC7B29E}
+		{58B7EAB3-C361-4348-8D7A-A15F1C15B863} = {55723349-C6D1-4C13-92A2-1BA9BE22535B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A959BA6A-B9DB-4CA9-BB07-216443075AD1}
 	EndGlobalSection
 EndGlobal
