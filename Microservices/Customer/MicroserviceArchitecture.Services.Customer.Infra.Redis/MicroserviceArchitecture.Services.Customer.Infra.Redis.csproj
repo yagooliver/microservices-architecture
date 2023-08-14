@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicroserviceArchitecture.Services.Customer.Contracts\MicroserviceArchitecture.Services.Customer.Contracts.csproj" />
+    <ProjectReference Include="..\MicroserviceArchitecture.Services.Customer.Model\MicroserviceArchitecture.Services.Customer.Model.csproj" />
+    <ProjectReference Include="..\..\..\Common\MicroserviceArchitecture.Common.Models\MicroserviceArchitecture.Common.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.6.104" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
