@@ -1,7 +1,6 @@
 using MediatR;
 using MicroserviceArchitecture.Common.Models.Handler;
 using MicroserviceArchitecture.Common.Models.Interfaces;
-using MicroserviceArchitecture.Common.Models.Interfaces.Repositories;
 using MicroserviceArchitecture.Services.Customer.Application.CommandHandlers;
 using MicroserviceArchitecture.Services.Customer.Application.Commands;
 using MicroserviceArchitecture.Services.Customer.Contracts.Interfaces;
@@ -35,6 +34,7 @@ namespace MicroserviceArchitecture.Services.Customer.Service
             services.AddScoped<IRequestHandler<AddCustomerCommand, CustomerDto>, AddCustomerCommandHandler>();
             services.AddScoped<IRequestHandler<GetCustomerByIdCommand, CustomerDto>, GetCustomerByIdCommandHandler>();
             services.AddScoped<IRequestHandler<GetAllCustomersCommand, List<CustomerDto>>, GetAllCustomersCommandHandler>();
+            services.AddScoped<IRequestHandler<DeleteCustomerCommand, bool>, DeleteCustomerCommandHandler>();
         }
     }
 }

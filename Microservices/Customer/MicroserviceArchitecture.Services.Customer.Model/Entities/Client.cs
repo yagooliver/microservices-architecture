@@ -13,7 +13,11 @@ namespace MicroserviceArchitecture.Services.Customer.Model.Entities
         {
 
         }
-
+        
+        public Client(Guid id)
+        {
+            Id = id;
+        }
         public Client(Guid createdBy, string firstName, string lastName, string email)
         {
             FirstName = firstName; 

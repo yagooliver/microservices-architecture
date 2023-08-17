@@ -50,5 +50,11 @@ namespace MicroserviceArchitecture.Services.Customer.Service.Controllers
 
             return Ok(dto);
         }
+
+        [HttpGet("ping")]
+        public IActionResult Ping()
+        {
+            return Ok("Pong");
+        }
     }
 }

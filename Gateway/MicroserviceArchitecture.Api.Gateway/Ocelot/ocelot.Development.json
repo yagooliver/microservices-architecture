@@ -16,7 +16,9 @@
       },
       "UpstreamPathTemplate": "/Customers",
       "UpstreamHttpMethod": [ "GET" ],
-      "DangerousAcceptAnyServerCertificateValidator": true
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "customer",
+      "ServiceName":  "customer"
     },
     {
       "DownstreamPathTemplate": "/api/Customers",
@@ -34,7 +36,9 @@
       },
       "UpstreamPathTemplate": "/Customers",
       "UpstreamHttpMethod": [ "POST" ],
-      "DangerousAcceptAnyServerCertificateValidator": true
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "customer",
+      "ServiceName": "customer"
     },
     {
       "DownstreamPathTemplate": "/api/Customers/{id}",
@@ -52,11 +56,77 @@
       },
       "UpstreamPathTemplate": "/Customers/{id}",
       "UpstreamHttpMethod": [ "GET" ],
-      "DangerousAcceptAnyServerCertificateValidator": true
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "customer",
+      "ServiceName": "customer"
+    },
+    {
+      "DownstreamPathTemplate": "/order",
+      "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 30003
+        }
+      ],
+      "UpstreamPathTemplate": "/order",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "orders",
+      "ServiceName": "orders"
+    },
+    {
+      "DownstreamPathTemplate": "/shippment",
+      "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 30004
+        }
+      ],
+      "UpstreamPathTemplate": "/shipping",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "shippings",
+      "ServiceName": "shippings"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "customer",
+      "Config": [
+        {
+          "Name": "Customer API",
+          "Version": "v1",
+          "Url": "http://localhost:30002/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "orders",
+      "Config": [
+        {
+          "Name": "Orders API",
+          "Version": "v1",
+          "Url": "http://localhost:30003/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "shippings",
+      "Config": [
+        {
+          "Name": "Shipping API",
+          "Version": "v1",
+          "Url": "http://localhost:30004/swagger/v1/swagger.json"
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
     "RequestIdKey": "X-Correlation-Id",
-    "BaseUrl": "http://localhost:30002"
+    "BaseUrl": "http://localhost:30001"
   }
 }

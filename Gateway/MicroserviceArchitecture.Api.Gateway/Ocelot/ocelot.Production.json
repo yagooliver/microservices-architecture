@@ -3,6 +3,7 @@
     {
       "DownstreamPathTemplate": "/api/Customers",
       "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "customer-service",
@@ -14,11 +15,14 @@
         "Region": "customercaching"
       },
       "UpstreamPathTemplate": "/Customers",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "customer"
     },
     {
       "DownstreamPathTemplate": "/api/Customers",
       "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "customer-service",
@@ -30,11 +34,14 @@
         "Region": "customercaching"
       },
       "UpstreamPathTemplate": "/Customers",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "customer"
     },
     {
       "DownstreamPathTemplate": "/api/Customers/{id}",
       "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "customer-service",
@@ -46,11 +53,75 @@
         "Region": "customercaching"
       },
       "UpstreamPathTemplate": "/Customers/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "customer"
+    },
+    {
+      "DownstreamPathTemplate": "/order",
+      "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "order-service",
+          "Port": 30003
+        }
+      ],
+      "UpstreamPathTemplate": "/order",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "order"
+    },
+    {
+      "DownstreamPathTemplate": "/shipping",
+      "DownstreamScheme": "http",
+      "DownstreamHttpVersion": "1.0",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shipping-service",
+          "Port": 30004
+        }
+      ],
+      "UpstreamPathTemplate": "/shipping",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "SwaggerKey": "shipping"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "customer",
+      "Config": [
+        {
+          "Name": "Customer API",
+          "Version": "v1",
+          "Url": "http://customer-service/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "orders",
+      "Config": [
+        {
+          "Name": "Orders API",
+          "Version": "v1",
+          "Url": "http://order-service/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "shipping",
+      "Config": [
+        {
+          "Name": "Shipping API",
+          "Version": "v1",
+          "Url": "http://order-service/swagger/v1/swagger.json"
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
     "RequestIdKey": "X-Correlation-Id",
-    "BaseUrl": "https://localhost:3002"
+    "BaseUrl": "http://localhost:30001"
   }
 }

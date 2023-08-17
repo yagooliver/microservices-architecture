@@ -1,5 +1,8 @@
+using Microsoft.Extensions.Configuration;
+using MMLib.SwaggerForOcelot.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Values;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +15,14 @@ builder.Configuration
     .AddJsonFile($"{AppContext.BaseDirectory}/Ocelot/ocelot.{builder.Environment.EnvironmentName}.json")
     .AddEnvironmentVariables();
 
+builder.Configuration.AddOcelotWithSwaggerSupport((o) =>
+{
+    o.FileOfSwaggerEndPoints = "ocelot.swagger";
+    o.Folder = "Ocelot";
+    o.HostEnvironment = builder.Environment;
+    o.PrimaryOcelotConfigFileName = $"{AppContext.BaseDirectory}/Ocelot/ocelot.{builder.Environment.EnvironmentName}.json";
+});
+
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
     serverOptions.Limits.MaxConcurrentConnections = 100;
@@ -19,14 +30,16 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerForOcelot(builder.Configuration);
 builder.Services.AddOcelot(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerForOcelotUI(opt =>
+{
+    opt.PathToSwaggerGenerator = "/swagger/docs";
+});
 
 //app.UseHttpsRedirection();
 app.UseRouting();
