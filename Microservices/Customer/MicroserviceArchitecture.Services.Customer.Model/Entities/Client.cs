@@ -5,15 +5,14 @@ namespace MicroserviceArchitecture.Services.Customer.Model.Entities
 {
     public class Client : EntityBase
     {
-        public string FirstName {get;}
-        public string LastName { get;}
-        public string Email {get;}
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email {get;set;}
 
-        private Client()
+        public Client()
         {
 
         }
-        
         public Client(Guid id)
         {
             Id = id;

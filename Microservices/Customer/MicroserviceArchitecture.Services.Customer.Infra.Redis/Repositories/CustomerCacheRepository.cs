@@ -82,7 +82,7 @@ namespace MicroserviceArchitecture.Services.Customer.Infra.Redis.Repositories
 
             if (client != null && client.HasValue && !client.Value.IsNull)
             {
-                return JsonSerializer.Deserialize<Client>(client.Value);
+                return JsonSerializer.Deserialize<Client>(client);
             }
 
             Client? result = await customerRepository.GetByIdAsync(id);

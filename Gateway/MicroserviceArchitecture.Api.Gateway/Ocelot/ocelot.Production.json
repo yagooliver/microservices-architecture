@@ -2,12 +2,12 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/Customers",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "customer-service",
-          "Port": 30002
+          "Port": 3002
         }
       ],
       "FileCacheOptions": {
@@ -21,12 +21,12 @@
     },
     {
       "DownstreamPathTemplate": "/api/Customers",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "customer-service",
-          "Port": 30002
+          "Port": 3002
         }
       ],
       "FileCacheOptions": {
@@ -40,12 +40,12 @@
     },
     {
       "DownstreamPathTemplate": "/api/Customers/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "customer-service",
-          "Port": 30002
+          "Port": 3002
         }
       ],
       "FileCacheOptions": {
@@ -59,27 +59,27 @@
     },
     {
       "DownstreamPathTemplate": "/order",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "order-service",
-          "Port": 30003
+          "Port": 3003
         }
       ],
       "UpstreamPathTemplate": "/order",
       "UpstreamHttpMethod": [ "GET" ],
       "DangerousAcceptAnyServerCertificateValidator": true,
-      "SwaggerKey": "order"
+      "SwaggerKey": "orders"
     },
     {
-      "DownstreamPathTemplate": "/shipping",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/shippment",
+      "DownstreamScheme": "https",
       "DownstreamHttpVersion": "1.0",
       "DownstreamHostAndPorts": [
         {
           "Host": "shipping-service",
-          "Port": 30004
+          "Port": 3004
         }
       ],
       "UpstreamPathTemplate": "/shipping",
@@ -95,7 +95,7 @@
         {
           "Name": "Customer API",
           "Version": "v1",
-          "Url": "http://customer-service/swagger/v1/swagger.json"
+          "Url": "https://customer-service:3002/swagger/v1/swagger.json"
         }
       ]
     },
@@ -105,7 +105,7 @@
         {
           "Name": "Orders API",
           "Version": "v1",
-          "Url": "http://order-service/swagger/v1/swagger.json"
+          "Url": "https://order-service:3003/swagger/v1/swagger.json"
         }
       ]
     },
@@ -115,7 +115,7 @@
         {
           "Name": "Shipping API",
           "Version": "v1",
-          "Url": "http://order-service/swagger/v1/swagger.json"
+          "Url": "https://shipping-service:3004/swagger/v1/swagger.json"
         }
       ]
     }
